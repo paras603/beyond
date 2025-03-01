@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Beyond</string>
+    <string name="about">About Us</string>
+    <string name="aboutTeam">Team Members: Paras Mani Rai, Roshan Budhathoki, Mandip Gurung</string>
+    <string name="about_more">Beyond is a space exploration app that provides users with access to the latest information and imagery from NASA, including the Astronomy Picture of the Day, Mars Rover Photos, and Near-Earth Object (NEO) Tracker.</string>
 </resources>
