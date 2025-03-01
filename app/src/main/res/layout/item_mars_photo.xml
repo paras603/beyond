@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="10dp"> <!-- Fixed margin attribute -->
+
+    <!-- Name of the Mars Photo -->
+    <TextView
+        android:id="@+id/tvRoverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rover: Curiosity"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <!-- Camera Info -->
+    <TextView
+        android:id="@+id/tvCameraName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera: MastCam"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Date of the Mars Photo -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: 2025-02-25"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Image of the Mars Photo -->
+    <ImageView
+        android:id="@+id/ivMarsPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"/>
+</LinearLayout>

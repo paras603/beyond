@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="10dp"> <!-- Fixed margin attribute -->
+
+    <!-- Name of the NEO -->
+    <TextView
+        android:id="@+id/tvNeoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: Asteroid 12345"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <!-- Size of the NEO -->
+    <TextView
+        android:id="@+id/tvNeoSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size (Max): 1.5 km"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Magnitude of the NEO -->
+    <TextView
+        android:id="@+id/tvNeoMagnitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Magnitude: 22.5"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"/>
+</LinearLayout>
