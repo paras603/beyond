@@ -1,5 +1,6 @@
 package com.example.beyond
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,10 @@ class NeoActivity : AppCompatActivity() {
         viewModel.neoData.observe(this) { neoData ->
             val asteroids = neoData.near_earth_objects.values.flatten()
             adapter.submitList(asteroids)
+        }
+
+        binding.neoToMain.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         viewModel.fetchNeoData("AjRhpWfHEPTpt7zHHFHXdxqGlUHEQFzanRYe9y9R", "2025-02-25", "2025-02-26")

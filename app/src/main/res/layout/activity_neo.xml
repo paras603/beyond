@@ -19,7 +19,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNeo"
+        android:layout_width="379dp"
+        android:layout_height="590dp"
+        android:background="@android:color/white" />
+
+    <Button
+        android:id="@+id/neoToMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"/>
+        android:layout_height="wrap_content"
+        android:text="Back" />
 </LinearLayout>

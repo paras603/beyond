@@ -1,5 +1,6 @@
 package com.example.beyond
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,9 @@ class MarsActivity : AppCompatActivity() {
             adapter.submitList(marsData.photos)
         }
 
+        binding.marsToMain.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
         viewModel.fetchMarsPhotos("AjRhpWfHEPTpt7zHHFHXdxqGlUHEQFzanRYe9y9R", "2025-02-25")
     }
 }
