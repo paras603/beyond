@@ -36,7 +36,7 @@
         android:id="@+id/tvTeamMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team Members: John Doe, Jane Smith, Alex Johnson, [Your Name]"
+        android:text="Team Members: Paras Mani Rai, Roshan Budhathoki, Mandip Gurung"
         android:textSize="16sp"
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
