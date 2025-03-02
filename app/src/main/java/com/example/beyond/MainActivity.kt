@@ -3,35 +3,42 @@ package com.example.beyond
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.beyond.databinding.ActivityMainBinding
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.ActionBarDrawerToggle
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        // Navigate to Astronomy Picture of the Day (APOD)
-        binding.btnApod.setOnClickListener {
-            startActivity(Intent(this, ApodActivity::class.java))
-        }
+        drawerLayout = findViewById(R.id.drawerLayout)
+        val navigationView = findViewById<NavigationView>(R.id.navigationView)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
 
-        // Navigate to Mars Rover Photos
-        binding.btnMars.setOnClickListener {
-            startActivity(Intent(this, MarsActivity::class.java))
-        }
+        setSupportActionBar(toolbar)
 
-        // Navigate to Near-Earth Objects (NEO) Tracker
-        binding.btnNeo.setOnClickListener {
-            startActivity(Intent(this, NeoActivity::class.java))
-        }
+        // Enable hamburger menu icon
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-        // Navigate to About Page
-        binding.btnAbout.setOnClickListener {
-            startActivity(Intent(this, AboutActivity::class.java))
+        // Handle menu item clicks
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            drawerLayout.closeDrawer(GravityCompat.START) // Close drawer before opening activity
+
+            when (menuItem.itemId) {
+                R.id.nav_apod -> startActivity(Intent(this, ApodActivity::class.java))
+                R.id.nav_mars -> startActivity(Intent(this, MarsActivity::class.java))
+                R.id.nav_neo -> startActivity(Intent(this, NeoActivity::class.java))
+                R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
+            }
+            true
         }
     }
 }

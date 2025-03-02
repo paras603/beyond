@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_apod"
+        android:icon="@drawable/baseline_photo_24"
+        android:title="Astronomy Picture of the Day" />
+
+    <item
+        android:id="@+id/nav_mars"
+        android:icon="@drawable/baseline_photo_library_24"
+        android:title="Mars Rover Photos" />
+
+    <item
+        android:id="@+id/nav_neo"
+        android:icon="@drawable/baseline_track_changes_24"
+        android:title="Near-Earth Object Tracker" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/baseline_info_24"
+        android:title="About" />
+</menu>

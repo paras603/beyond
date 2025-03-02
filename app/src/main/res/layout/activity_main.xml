@@ -1,48 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main content layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar at the top -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- ScrollView for the main content area -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- Homepage UI -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+        <!-- App Logo -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:contentDescription="App Logo"
+            android:src="@drawable/baseline_shield_moon_24" />
+
+        <!-- App Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beyond"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center" />
+
+        <!-- Description Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_more"
+            android:textSize="24sp"
+            android:justificationMode="inter_word"
+            android:textStyle="normal"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center" />
+
+        </LinearLayout>
+        </ScrollView> <!-- This closes the ScrollView -->
+
+    </LinearLayout> <!-- This closes the main LinearLayout -->
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigationView"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
-    android:background="@color/black">
+    android:layout_gravity="start"
+    app:menu="@menu/drawer_menu"
+    app:headerLayout="@layout/nav_header" />
 
-    <Button
-        android:id="@+id/btnApod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Astronomy Picture of the Day"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
-        android:padding="10dp" />
-
-    <Button
-        android:id="@+id/btnMars"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mars Rover Photos"
-        android:backgroundTint="@color/teal_700"
-        android:textColor="@android:color/white"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/btnNeo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Near-Earth Object Tracker"
-        android:backgroundTint="@color/blue"
-        android:textColor="@android:color/white"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/btnAbout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About"
-        android:backgroundTint="@color/gray"
-        android:textColor="@android:color/white"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"/>
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout> <!-- This closes the DrawerLayout -->
